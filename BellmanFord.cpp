@@ -2,36 +2,36 @@
 #include<iostream>
 using namespace std;
 
-void BellmannFord(vector<vector<int>> edges, int source, int v){
-    vector<int> ans(v);
-    for(int i = 0 ; i < v; i++){
-        ans[i] = 99999;
-    }
-    ans[source] = 0;
-    for(int i = 0 ; i < v-1; i++){
-        for(int a = 0 ; a < edges.size() ; a++){
-                int u = edges[a][0];
-                int v = edges[a][1];
-                int wt = edges[a][2];
-                if(ans[u] != 99999 && ans[u] + wt < ans[v]){
-                    ans[v] = ans[u] + wt;
-                }
-        }
-    }
-    for(int a = 0 ; a < edges.size() ; a++){
-                int u = edges[a][0];
-                int v = edges[a][1];
-                int wt = edges[a][2];
-                if(ans[u] != 99999 && ans[u] + wt < ans[v]){
-                    printf("There is a negative edge 🙄😏😣");
-                    return;
-                }
-        }
+// void BellmannFord(vector<vector<int>> edges, int source, int v){
+//     vector<int> ans(v);
+//     for(int i = 0 ; i < v; i++){
+//         ans[i] = 99999;
+//     }
+//     ans[source] = 0;
+//     for(int i = 0 ; i < v-1; i++){
+//         for(int a = 0 ; a < edges.size() ; a++){
+//                 int u = edges[a][0];
+//                 int v = edges[a][1];
+//                 int wt = edges[a][2];
+//                 if(ans[u] != 99999 && ans[u] + wt < ans[v]){
+//                     ans[v] = ans[u] + wt;
+//                 }
+//         }
+//     }
+//     for(int a = 0 ; a < edges.size() ; a++){
+//                 int u = edges[a][0];
+//                 int v = edges[a][1];
+//                 int wt = edges[a][2];
+//                 if(ans[u] != 99999 && ans[u] + wt < ans[v]){
+//                     printf("There is a negative edge 🙄😏😣");
+//                     return;
+//                 }
+//         }
 
-   for(int i = 0; i < ans.size() ; i++){
-        cout<<ans[i]<<" ";
-    }
-}
+//    for(int i = 0; i < ans.size() ; i++){
+//         cout<<ans[i]<<" ";
+//     }
+// }
 void BF(int edges[][3], int source, int E, int V){
     int ans[V];
     for(int i = 0 ; i < V ; i++){
